@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "track": "hls",
+  "model": {
+    "name": "unsloth/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF",
+    "source": "https://huggingface.co/unsloth/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF",
+    "revision": "f2d3fe3694501008786e81e5f20360cbf715496a",
+    "quantization": "gguf-ud-q4_k_m",
+    "measured_vram_gb": 26.59,
+    "finetuned": false,
+    "finetune_weights_url": null
+  },
+  "auxiliary_models": [],
+  "context": {
+    "max_model_len": 524288,
+    "max_output_tokens": 16384,
+    "rope_scaling": null
+  },
+  "generation": {
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    },
+    "reasoning_effort": null
+  },
+  "serving": {
+    "backend": "llamacpp",
+    "version": "0.4.0-dev (build 1, commit f114f91)",
+    "start_command": "./serve/start.sh",
+    "port": 8000
+  },
+  "endpoints": {
+    "solve": "./run.sh",
+    "baseline": "./run_baseline.sh",
+    "http_port": 7860
+  },
+  "agent": {
+    "max_rounds": 3,
+    "tools": [
+      "signature",
+      "selfcheck",
+      "csynth"
+    ],
+    "skills": [
+      "hls-interface-contract",
+      "hls-self-verification",
+      "hls-testbench-callsite",
+      "hls-testbench-compile-errors",
+      "hls-testbench-function-mismatch",
+      "hls-testbench-undeclared-identifiers",
+      "hls-empty-round-recovery",
+      "hls-truncated-response",
+      "hls-self-test-passes-official-fails",
+      "hls-runtime-algorithm-mismatch",
+      "hls-runtime-functional-errors",
+      "hls-testbench-integration",
+      "hls-testbench-validation",
+      "hls-testbench-compilation-errors",
+      "hls-testbench-type-mismatch"
+    ]
+  }
+}
