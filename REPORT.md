@@ -846,6 +846,15 @@ export LLM_BACKEND=openai \
   目前只有实现、没有单独立测（已知缺口，见 `serve/README.md`）。申报栈上的
   **全量得分已实测**（§6.2.1，2026-10-28）。
 
+### 7.6 GUI 客户端与仓库分支
+
+工程当前版本与配套的本地 GUI 客户端已推送至配套仓库的 **`gui` 分支**：Gitee
+`https://gitee.com/hyperdreamer/46939_hlsagent`、GitHub
+`https://github.com/hyperdreamerrr/fpgahls`。该分支 = 提交包快照（根目录，与
+`master` 相同的文件）+ `gui/` 客户端源码目录（`server.py`、`ui.html`、
+`iface_gen.py`、`remote_backend.py`、`remote/` 等）；`master` 分支为提交包快照本身。
+GUI 只用于本地驱动与过程展示，不参与评测运行，也不改变包内任何行为。
+
 ## 8. 失败分析
 
 ### 8.1 仍然做不出来的题目类型
